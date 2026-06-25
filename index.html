@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>succession.org – The discipline of the handoff</title>
 <meta name="description" content="A reference library for leadership and ownership transition. Frameworks, data, tools, and voices on internal and external succession for mid-market companies and their leaders.">
+<link rel="canonical" href="https://succession.org/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 6.5c-6 0-9 4-9 8.2 0 4 3 5.8 7 6.6' stroke='%23BC8A4A' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M20 33.5c6 0 9-4 9-8.2 0-4-3-5.8-7-6.6' stroke='%238AA697' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='13' cy='14.7' r='2.6' fill='%23BC8A4A'/%3E%3Ccircle cx='27' cy='25.3' r='2.6' fill='none' stroke='%238AA697' stroke-width='2'/%3E%3C/svg%3E">
+<meta property="og:title" content="succession.org — The discipline of the handoff">
+<meta property="og:description" content="A reference library for leadership and ownership transition. Frameworks, data, tools, and voices on internal and external succession.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://succession.org/">
+<meta property="og:image" content="https://succession.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="succession.org — The discipline of the handoff">
+<meta name="twitter:description" content="A reference library for leadership and ownership transition, built for mid-market owners, boards, and advisors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -49,6 +59,8 @@
   p{margin:0 0 1.05em}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   .mono{font-family:var(--mono);font-weight:500;letter-spacing:0.02em}
+  .skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--bronze);color:var(--pine-3);padding:10px 16px;font-family:var(--mono);font-size:13px;border-radius:0 0 3px 0}
+  .skip:focus{left:0;text-decoration:none}
 
   /* ---------- scroll progress: the handoff line ---------- */
   .progress-track{position:fixed;top:0;left:0;width:100%;height:3px;background:transparent;z-index:120}
@@ -71,6 +83,7 @@
 
   /* ---------- generic sections ---------- */
   section{padding:96px 0;position:relative}
+  section[id],#top,#main{scroll-margin-top:84px}
   .band-dark{background:var(--pine);color:var(--cream-text)}
   .band-dark h2,.band-dark h3{color:var(--cream-text)}
   .band-deep{background:var(--pine-3);color:var(--cream-text)}
@@ -274,9 +287,11 @@
     .reveal{opacity:1;transform:none;transition:none}
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
 <div class="progress-track"><div class="progress-fill" id="prog"></div></div>
 
 <!-- ======================= NAV ======================= -->
@@ -291,7 +306,7 @@
       </svg>
       <span class="name"><b>succession</b>.org</span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">≡</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">≡</button>
     <nav class="links" id="links">
       <a href="#case">The Case</a>
       <a href="#domains">Two Domains</a>
@@ -305,6 +320,7 @@
   </div>
 </header>
 
+<main id="main">
 <!-- ======================= HERO ======================= -->
 <a id="top"></a>
 <section class="hero">
@@ -813,6 +829,7 @@
     <a class="btn btn-primary reveal" href="#case">Return to the field</a>
   </div>
 </section>
+</main>
 
 <!-- ======================= FOOTER ======================= -->
 <footer>
@@ -855,7 +872,7 @@
 <script>
   // mobile menu
   var mb=document.getElementById('menuBtn'),lk=document.getElementById('links');
-  mb.addEventListener('click',function(){lk.classList.toggle('open');});
+  mb.addEventListener('click',function(){var open=lk.classList.toggle('open');mb.setAttribute('aria-expanded',open);});
   lk.addEventListener('click',function(e){if(e.target.tagName==='A')lk.classList.remove('open');});
 
   // scroll progress
