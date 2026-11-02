@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>succession.org – The discipline of the handoff</title>
-<meta name="description" content="A reference library for leadership and ownership transition. Frameworks, data, tools, and voices on internal and external succession for mid-market companies and their leaders.">
+<meta name="description" content="A reference library and daily-updated feed on leadership and ownership transition. Current data, frameworks, tools, and voices on internal and external succession for mid-market companies, families, and their advisors.">
 <link rel="canonical" href="https://succession.org/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 6.5c-6 0-9 4-9 8.2 0 4 3 5.8 7 6.6' stroke='%23BC8A4A' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M20 33.5c6 0 9-4 9-8.2 0-4-3-5.8-7-6.6' stroke='%238AA697' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='13' cy='14.7' r='2.6' fill='%23BC8A4A'/%3E%3Ccircle cx='27' cy='25.3' r='2.6' fill='none' stroke='%238AA697' stroke-width='2'/%3E%3C/svg%3E">
 <meta property="og:title" content="succession.org — The discipline of the handoff">
@@ -74,8 +74,8 @@
   .brand .mark{width:30px;height:30px;flex:none}
   .brand .name{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-0.01em;color:var(--cream-text)}
   .brand .name b{color:var(--bronze);font-weight:600}
-  nav.links{display:flex;gap:26px;align-items:center}
-  nav.links a{font-family:var(--mono);font-size:12.5px;letter-spacing:0.04em;color:var(--cream-soft);text-transform:uppercase}
+  nav.links{display:flex;gap:20px;align-items:center}
+  nav.links a{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--cream-soft);text-transform:uppercase;white-space:nowrap}
   nav.links a:hover{color:var(--bronze);text-decoration:none}
   .nav-cta{border:1px solid var(--bronze);color:var(--bronze)!important;padding:7px 14px;border-radius:2px}
   .nav-cta:hover{background:var(--bronze);color:var(--pine-3)!important}
@@ -136,7 +136,7 @@
   .stat .figure{font-family:var(--serif);font-size:clamp(34px,4vw,46px);font-weight:600;color:var(--pine);line-height:1;letter-spacing:-0.02em}
   .stat .figure small{font-size:.5em;color:var(--bronze-deep)}
   .stat .txt{margin:14px 0 12px;font-size:15.5px;color:var(--ink)}
-  .stat .src{font-family:var(--mono);font-size:10.5px;letter-spacing:0.03em;color:var(--ink-soft);text-transform:uppercase}
+  .stat .src{font-family:var(--mono);font-size:11.5px;letter-spacing:0.03em;color:var(--ink-soft);text-transform:uppercase}
   .stat .src a{color:var(--bronze-deep)}
 
   /* ---------- two domains ---------- */
@@ -161,7 +161,7 @@
   .card .by{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);margin-bottom:14px}
   .card p{font-size:15px;color:var(--ink);margin-bottom:14px}
   .card .pills{display:flex;flex-wrap:wrap;gap:7px}
-  .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:0.03em;text-transform:uppercase;background:rgba(46,90,75,0.1);color:var(--forest);border:1px solid var(--line-light);border-radius:20px;padding:4px 11px}
+  .pill{font-family:var(--mono);font-size:11px;letter-spacing:0.03em;text-transform:uppercase;background:rgba(46,90,75,0.1);color:var(--forest);border:1px solid var(--line-light);border-radius:20px;padding:4px 11px}
 
   /* ---------- transfer spectrum ---------- */
   .spectrum-head{display:flex;gap:18px;flex-wrap:wrap;margin:38px 0 26px}
@@ -255,16 +255,42 @@
   .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:0.03em;color:var(--cream-soft)}
   .disclaimer{max-width:780px;margin:22px auto 0;font-size:11.5px;color:var(--cream-soft);text-align:center;line-height:1.6;opacity:.8}
 
+  /* ---------- the feed ---------- */
+  .band-sand{background:var(--parchment-2);border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light)}
+  .feed-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:34px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;text-transform:uppercase;background:transparent;color:var(--forest);border:1px solid var(--line-light);border-radius:20px;padding:7px 15px;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+  .chip:hover{border-color:var(--bronze)}
+  .chip[aria-pressed="true"]{background:var(--pine);color:var(--cream-text);border-color:var(--pine)}
+  .chip:focus-visible,.feed-title:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+  .feed-stamp{font-family:var(--mono);font-size:11.5px;letter-spacing:0.03em;color:var(--ink-soft);text-transform:uppercase}
+  .feed-list{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line-light)}
+  .feed-item{display:grid;grid-template-columns:76px 1fr auto;gap:8px 22px;align-items:baseline;padding:17px 4px;border-bottom:1px solid var(--line-light)}
+  .feed-item[hidden]{display:none}
+  .feed-item time{font-family:var(--mono);font-size:12px;letter-spacing:0.03em;color:var(--bronze-deep);text-transform:uppercase;white-space:nowrap}
+  .feed-title{font-family:var(--serif);font-size:19px;line-height:1.28;font-weight:500;color:var(--pine)}
+  .feed-title:hover{color:var(--bronze-deep)}
+  .feed-meta{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 8px;font-family:var(--mono);font-size:11px;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink-soft)}
+  .feed-src{color:var(--ink)}
+  .feed-tag{border:1px solid var(--line-light);border-radius:3px;padding:1px 7px}
+  .feed-cat{display:none}
+  .feed-note{font-size:13px;color:var(--ink-soft);margin:20px 0 0;max-width:78ch}
+  .feed-empty{display:none;padding:26px 4px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);text-transform:uppercase}
+  .strip-src{font-family:var(--mono);font-size:11px;letter-spacing:0.03em;color:var(--cream-soft);opacity:.8;margin:14px 0 0}
+  .strip-src a{color:var(--cream-soft);text-decoration:underline;text-underline-offset:3px}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
   /* ---------- responsive ---------- */
-  @media(max-width:900px){
+  @media(max-width:1200px){
     nav.links{display:none}
     nav.links.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--pine-3);padding:10px 28px 22px;border-bottom:1px solid var(--line-dark)}
     nav.links.open a{padding:13px 0;width:100%;border-bottom:1px solid var(--line-dark)}
     .menu-btn{display:block}
+  }
+  @media(max-width:900px){
     .stat.span4,.stat.span6,.stat.span8{grid-column:span 12}
     .domains,.cards,.paths,.tools,.voices,.watchlist,.lib-cols,.qgrid{grid-template-columns:1fr}
     .path:nth-child(odd){border-right:none}
@@ -273,6 +299,8 @@
     section{padding:72px 0}
     .hero{padding:80px 0 66px}
     .step{grid-template-columns:64px 1fr;gap:16px}
+    .feed-item{grid-template-columns:64px 1fr;gap:6px 16px}
+    .feed-meta{grid-column:2;justify-content:flex-start}
   }
   @media(max-width:560px){
     body{font-size:16px}
@@ -287,7 +315,7 @@
     .reveal{opacity:1;transform:none;transition:none}
   }
 </style>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.chips{display:none}</style></noscript>
 </head>
 <body>
 
@@ -309,6 +337,7 @@
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">≡</button>
     <nav class="links" id="links">
       <a href="#case">The Case</a>
+      <a href="#feed">Latest</a>
       <a href="#domains">Two Domains</a>
       <a href="#human">The People</a>
       <a href="#frameworks">Frameworks</a>
@@ -347,9 +376,10 @@
     <div class="hero-strip">
       <div class="cell"><span class="big">100%</span><span class="lab">of owners eventually exit</span></div>
       <div class="cell"><span class="big">~50%</span><span class="lab">of exits are unplanned</span></div>
-      <div class="cell"><span class="big">~$1T</span><span class="lab">value lost yearly to botched transitions</span></div>
-      <div class="cell"><span class="big">23%</span><span class="lab">of firms actively implementing a plan</span></div>
+      <div class="cell"><span class="big">23%</span><span class="lab">of family firms actively implementing a CEO succession plan</span></div>
+      <div class="cell"><span class="big">9%</span><span class="lab">of Boomer owners surveyed have an estate plan</span></div>
     </div>
+    <p class="strip-src">Sources: <a href="https://exit-planning-institute.org/state-of-owner-readiness" target="_blank" rel="noopener">EPI State of Owner Readiness</a> · <a href="https://www.deloitte.com/us/en/about/press-room/deloitte-private-survey-reveals-family-businesses-are-facing-a-succession-paradox.html" target="_blank" rel="noopener">Deloitte Private, Feb 2026</a> · <a href="https://blog.exit-planning-institute.org/key-owner-readiness-generational-soor" target="_blank" rel="noopener">EPI Generational Report, 2025</a></p>
   </div>
 </section>
 
@@ -358,7 +388,7 @@
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">01</span><span>The case for planning early</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The most predictable event in any company is the one least planned for.</h2>
-    <p class="sec-lead reveal">Leadership and ownership both turn over. The data below is consistent across decades of research: intention is high, preparation is low, and the gap is expensive. Every figure links to its source.</p>
+    <p class="sec-lead reveal">Leadership and ownership both turn over. The data below is consistent across decades of research and still holding in 2026: intention is high, preparation is low, and the gap is expensive. Every figure links to its source, and each was checked against that source in November 2026.</p>
 
     <div class="stat-grid">
       <div class="stat span4 reveal">
@@ -373,8 +403,8 @@
       </div>
       <div class="stat span4 reveal">
         <div class="figure">~51<small>%</small></div>
-        <p class="txt">Of the U.S. business market is owned by Baby Boomers set to transition within ten years: the "Silver Tsunami." Estimates of value changing hands run into the trillions.</p>
-        <p class="src">EPI · <a href="https://www.hbs.edu/bigs/silver-tsunami-employee-ownership" target="_blank" rel="noopener">Harvard BiGS, 2025</a></p>
+        <p class="txt">Of the U.S. business market is owned by Baby Boomers set to transition within about ten years: the "Silver Tsunami." But McKinsey estimates only 7–12% of Boomers retire in any given year, so it is a steady decade-long stream, not a single wave. Plenty of time to plan, and no reason to wait.</p>
+        <p class="src">EPI · McKinsey via <a href="https://olin.washu.edu/docs/research/silver-tsunami-ownership-transitions.pdf" target="_blank" rel="noopener">WashU Olin, Jul 2026</a></p>
       </div>
 
       <div class="stat span6 reveal">
@@ -384,7 +414,7 @@
       </div>
       <div class="stat span6 reveal">
         <div class="figure">The paradox</div>
-        <p class="txt">78% of family business leaders expect a CEO transition within a decade and 85% call planning critical, yet only 57% have a plan and just 23% are actively implementing one. 30% say they are already behind schedule.</p>
+        <p class="txt">78% of family business leaders expect a CEO transition within a decade (42% within three to five years) and 85% call planning critical, yet only 57% have a plan and just 23% are actively implementing one. 30% say they are already behind schedule.</p>
         <p class="src">Deloitte Private survey of 300 executives · <a href="https://www.deloitte.com/us/en/about/press-room/deloitte-private-survey-reveals-family-businesses-are-facing-a-succession-paradox.html" target="_blank" rel="noopener">Feb 2026</a></p>
       </div>
 
@@ -403,14 +433,176 @@
         <p class="txt">Of owners who do sell report profound regret within a year, most often because value, identity, and life-after were never prepared. The deal closes; the readiness was missing.</p>
         <p class="src">EPI, via <a href="https://www.rehmann.com/resource/succession-planning-for-busy-business-owners-your-shortcut-to-a-smarter-exit-strategy/" target="_blank" rel="noopener">Rehmann</a></p>
       </div>
+
+      <div class="stat span6 reveal">
+        <div class="figure">53<small>%</small></div>
+        <p class="txt">Share of new U.S. CEOs promoted from inside the company so far in 2026, up from 49% a year earlier. Through September, 1,337 CEO exits were announced, 19% fewer than the same period of 2025, and step-downs and retirements made up more than half of September's departures. Boards are leaning on the bench.</p>
+        <p class="src">Challenger, Gray &amp; Christmas · <a href="https://www.challengergray.com/blog/ceo-turnover-falls-in-september-women-gains-climb-to-27-9/" target="_blank" rel="noopener">Sept 2026 report</a></p>
+      </div>
+      <div class="stat span6 reveal">
+        <div class="figure">27 / 9 / 5<small>%</small></div>
+        <p class="txt">More than half of Baby Boomer owners surveyed plan to exit within five years, yet only 27% have had a formal valuation, 9% have an estate plan, and 5% have a dedicated exit-planning team. Millennials are the reverse: about 52% rank exit planning a top priority.</p>
+        <p class="src">Exit Planning Institute · <a href="https://blog.exit-planning-institute.org/key-owner-readiness-generational-soor" target="_blank" rel="noopener">Generational SOOR, 2025</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ======================= 02 TWO DOMAINS ======================= -->
+<!-- ======================= 02 THE FEED ======================= -->
+<section id="feed" class="band-sand">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">02</span><span>The feed</span><span class="ln"></span></div>
+    <h2 class="sec-title reveal">What is happening in succession, as it happens.</h2>
+    <p class="sec-lead reveal">Headlines, research, and data releases from the publishers and institutions that cover leadership and ownership transition, refreshed automatically each day. Every item links to the original.</p>
+
+    <div class="feed-head reveal">
+      <div class="chips" id="feedChips" role="group" aria-label="Filter the feed by topic">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="exit" aria-pressed="false">Exit planning</button>
+        <button class="chip" type="button" data-filter="family" aria-pressed="false">Family business</button>
+        <button class="chip" type="button" data-filter="ceo" aria-pressed="false">CEO &amp; board</button>
+        <button class="chip" type="button" data-filter="research" aria-pressed="false">Research &amp; data</button>
+      </div>
+      <p class="feed-stamp">Updated
+        <!--FEED:UPDATED-->
+        <time datetime="2026-11-02">November 2, 2026</time>
+        <!--/FEED:UPDATED-->
+      </p>
+    </div>
+
+    <ol class="feed-list" id="feedList">
+        <!--FEED:START-->
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-11-02">Nov 2</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBBY3NMX3k3V0Ezdm4xc3F0NVNWS3p2SXViakNpMlhUYzZvQmc5aC1ySjU0b1BsZE9WVk1oRW5hTmEzRmFXMEhRcTBSRE9fNjM4YWJjamx4Ukl6QURXSnA5WVNKUHh2T0RYZVd0Zmp5dHFETWdJ?oc=5" target="_blank" rel="noopener">Founder Succession: The Moment Most Family Businesses Break</a>
+          <span class="feed-meta"><span class="feed-src">Nett Magazine Online</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-11-01">Nov 1</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxORmQyeGk2R1U3VDZzUkRRb2cxN3lVN3lwZllndWVXZmM1SkhQUUtESHBZOTZTa2RaVFNKeno3Z3F3eVRwNFRaeHRDbTg0cGIxX3JuWEdQVTdxZ1pETi1WdmpsclduLUNxaF9mcWw0Vk9EWGtIYlFyUzRkeWhjeEYwZ2VSa0dnbFBEbnpLTFJvUTR1aHEtclljQURTV3lxalo0YUg2bW1qcHZVVGpEZjRUQjlvQzJnZVU?oc=5" target="_blank" rel="noopener">The Founder Who Can’t Leave: What Blind Founder Dependency Actually Costs a Family Business</a>
+          <span class="feed-meta"><span class="feed-src">Carroll County Mirror-Democrat</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-30">Oct 30</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5wNGVWZkNJampnNnIxOTJ0QkV2YVBpVDFZejRfVVJFLUVqSnhpay1TVkJqdFJfT1NVb0NsdldsQlZDVFRUMVhqd1ZUQVNGU1o1VkNmWktsSFJFRmNHWkhDajhxRGl5cWJDa180ZGFKbTZWM2pNcC1r?oc=5" target="_blank" rel="noopener">Watch: India’s Biggest Business Succession Battles</a>
+          <span class="feed-meta"><span class="feed-src">ED Times</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-29">Oct 29</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxQQTdCd0VJZFB5RFlIdkZuaDBGckV5eFpCdlZITFlyQWdTNUxUcGpUMVIySzJseTdPdzRFRUdJY1luekZvWEZmbkJ5djktRXBKLXRfdVB4LUtnVHN0clk4UWF5NEpjclRlWE5Db21tZmFMM0YtOV9xNVVJR25XZEVER0g4MDZjWmQ4Nm9rbzZ3WUlGRFdRTkdsRnB6eWxIZnFTMkRVWnNEV3JCbnRkaFZFTEI4Yk90d0dGVHhWZmFFV0NQUEpXOFpsdktsOGs1ZF94VHpHUG8tVllBS0FrRlQzcXV5Ukh1bE10a0RRWlFOaEIxZWpzeWJTNUhB?oc=5" target="_blank" rel="noopener">Forbes Middle East Family Business Summit Day 2 Spotlights Wealth Diversification, Regional Growth And Legacy</a>
+          <span class="feed-meta"><span class="feed-src">Forbes Middle East</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-10-29">Oct 29</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPcGt1MVlOcF9GQ1ZDTldQcjBHbVZ1NHh6ZUZxYlNBeU11dVByR0JEWHRQekdXOXFpdVJVS2xmb184dkhPMHA4elRfdVlPbmp1OVdzUGVFem5mTWh0V2NMdDFQc2NKSkNVUmZFQzBZWXROOWtBWUpKSzEwVUxQckpKY0tkXzMzbk5DMk54dmlLVFI2RVctaTZLaTNLMzFnbVd3QzhCU3U4dWRmN0d5WTdlUnNINkFwcE0?oc=5" target="_blank" rel="noopener">Trend for retiring business owners to not have succession plan: CFIB survey</a>
+          <span class="feed-meta"><span class="feed-src">Lethbridge News Now</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-29">Oct 29</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxObS1QMlpRa0dCVFFXRkdYWURZbElhdzJ2TVdyemNoZGlvOU9taE9pSGMwM1lkWW12SmlOakpKOEhfZ1JyM1JEeDQyMGhZQnplWmJ5YzdyVTJ6WVdSY0M5WHBBTmRIbmxDT0dRN2FjbXRLY1BtRzNUdHROY2lJcXJ3TlJ2VVNuSTJlRmJBamE5TUtyZnZXakxPZklKcVNubTNOTy1zTUJlZG9xRHdmMW5nTDVpZU9QUQ?oc=5" target="_blank" rel="noopener">TVS Succession Row Escalates As Venu Srinivasan, Daughter File Caveats</a>
+          <span class="feed-meta"><span class="feed-src">BW Auto World</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-28">Oct 28</time>
+          <a class="feed-title" href="https://www.familybusinessmagazine.com/wealth-goals/moral-ecology-a-new-way-of-seeing-family-enterprise-practices/" target="_blank" rel="noopener">Moral ecology: A new way of seeing family enterprise practices</a>
+          <span class="feed-meta"><span class="feed-src">Family Business Magazine</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-28">Oct 28</time>
+          <a class="feed-title" href="https://www.familybusinessmagazine.com/podcasts/episode-55-nerding-out-on-governance-letting-nextgens-take-risks-from-owner-to-steward/" target="_blank" rel="noopener">Episode 55: Nerding Out on Governance | Letting NextGens Take Risks | From Owner to Steward</a>
+          <span class="feed-meta"><span class="feed-src">Family Business Magazine</span><span class="feed-tag">Podcast</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-10-27">Oct 27</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNdFdsM0tBc3hKaFZZbGpHMkpXeVdad3pBSkxPdm5mSGdTZDdKWmJadjk2OHh3Qlg1VHg5UlN6QjBnMHVUVFBnWXA1NDdaUXNIYXl4V1gyOFYxZHQxREs3d3Z1aDlJY1NqSVRiMERpdUZueUJ5TVdQVEhQbXg1YnluTEl5QXhzWjlua2lpUllHQXFDUzY5dThXajZB?oc=5" target="_blank" rel="noopener">EssilorLuxottica has clear succession planning for top roles, director says</a>
+          <span class="feed-meta"><span class="feed-src">AOL.com</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="research">
+          <time datetime="2026-10-27">Oct 27</time>
+          <a class="feed-title" href="https://www.challengergray.com/blog/ceo-turnover-falls-in-september-women-gains-climb-to-27-9/" target="_blank" rel="noopener">CEO Turnover Falls in September; Women Gains Climb to 27.9%</a>
+          <span class="feed-meta"><span class="feed-src">Challenger, Gray &amp; Christmas</span><span class="feed-tag">Data</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-10-26">Oct 26</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQQlZGVXRETi1DNW1Da3RTcDR4bDdSYnI4Z0NLU2U4ZTFTUmJJaGtPd0tGMkxCUXZoT2hZTTFZeVUxZHNqZXFYeWNnN0kyTVVWRGIwTDJNVG8xRjRFaE1YNjIwb0VCSThjUFFGYmo4NWNpSlRXVTc1UThYSEwyY1hna1FZc3lLWmZ1WFlIZmhTMDhUZ2lxR3RaNw?oc=5" target="_blank" rel="noopener">Indiana webinar targets small business succession planning</a>
+          <span class="feed-meta"><span class="feed-src">WRTV</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-10-25">Oct 25</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMiekFVX3lxTE15ckdyZ3I4bXlsUXBsVHEwNjNnMS1ndUtxQTc5YW9DRzdmMHZ3NDE1TGxoZ2FhMmJxTWZWMEVoekpHNll5QTMxTkVWTUQ2bjNscDd6RDdlck5wVV9mV213ZjJXUkVlT3RVTEJWU01XT2pQSm5DRTJVdEZn0gGOAUFVX3lxTE9VWG1GYjBXMDU4VDlVcEg2ZXg3bWtCSG5tZ0dYSkI0ZjBHQWx5a0lBbzg1QXFfS1F2OHZfMkFRWEZfVVl2LWJNcFZCZEFUNFoxTHd0OVNlODcxTUZmVUpfdTVsdVFjSC1zVWFTMFFBRmNjTEtKSU9HSXlVTkplRmEtZ0dqWnFNbHh5Nnc3cWc?oc=5" target="_blank" rel="noopener">Samsung expands board oversight of CEO succession across major affiliates</a>
+          <span class="feed-meta"><span class="feed-src">Chosunbiz</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-10-23">Oct 23</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQT3lIV3U1Um10TEpqQXRqZTNzZ0hqSmFGWTM4UzlnZkhob3IxUF9SVTBJNnltY3VZTzJVRzcxV1E5eXpIRE5kQnY4ZkM3Mm1Hcms2R29BeTF3X2dZVl9qYjFqOHBOZWJiQXZXYVlvalhETGxROXVmeG41R0VCUklRZzNxS3MyWUc0YzhWSlAycm5XaWtoRktBT1hkMXNrM0I1aWpxSXNLUy11bm95SEYyeUkwQlRUVzRRWUZ5S1ZjdVVmTU0zNndIdURSZk5WMzVLSlJTT0xyR0Fqdw?oc=5" target="_blank" rel="noopener">Only a few of Canada’s small business owners have a succession plan: report</a>
+          <span class="feed-meta"><span class="feed-src">Benefits and Pensions Monitor</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-22">Oct 22</time>
+          <a class="feed-title" href="https://www.familybusinessmagazine.com/ownership/valuation/esops-as-an-exit-strategy-for-family-businesses/" target="_blank" rel="noopener">ESOPs as an exit strategy for family businesses</a>
+          <span class="feed-meta"><span class="feed-src">Family Business Magazine</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-10-22">Oct 22</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPTVBtcmJYazMwN0lfbElnRV9OLUkzVzJmbmxQWkxxeGJWc1UyR21wcVdaSVBSUnozQ3ZIengyYlI1MjdBVHY3MTdGQkJqU2NxcnYzTlVtNUVNckVjTGh0aFo4Z0dOTENTdjBMZzRjYk44TjVfckVXTXhSNTZ0Tlh3c2dKQmdSc2xNLUl6VXJZTDFyY295aU0tV29UdlREQ05TZWdj?oc=5" target="_blank" rel="noopener">Exit Planning Institute Unveils 2027 Exit Planning Summit Agenda, Centered on &quot;Advisor Activation&quot;</a>
+          <span class="feed-meta"><span class="feed-src">Yahoo Finance</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-10-22">Oct 22</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPY3FHcFQ2Q3NYY2JhQkxOTTR4SXNERHFTSURVVmlaYjlRSzdJWlRSV3F3dEM5TkotdVNMcGh5bUhwenBoR2R2WW5MQjBLdlVRT0VCWFpqakRJNWc1cjVmRHRFcXZQRGNpWTRWdEtfcDUxc0w0Ry1EUUhhd2FhUjlUTGhQMVQwcW5QYVR4NVZiMkYxOXJSQ09lS203VGloTmU2THRCZE9uMGtZeVotZUdfWmF1VTlxd3gtRUVESEd4aw?oc=5" target="_blank" rel="noopener">Small business succession planning gap puts $2 trillion at risk</a>
+          <span class="feed-meta"><span class="feed-src">Wealth Professional</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="family">
+          <time datetime="2026-10-21">Oct 21</time>
+          <a class="feed-title" href="https://www.familybusinessmagazine.com/governance/before-you-say-yes-the-governance-gap-nextgen-leaders-overlook/" target="_blank" rel="noopener">Before you say yes: The governance gap NextGen leaders overlook</a>
+          <span class="feed-meta"><span class="feed-src">Family Business Magazine</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-10-21">Oct 21</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBkSDFaWE5kYVItUW5iX3hoLXlqWXQyclNERzVPUDQtbWl2OEdobTlDT2UzY3Q1bzVTSU1vaGJZMDZQS0pWZkVScFBWb0o2MG9vS2ZTdkxYQ1NSMHNZMUY4T2hKeUhkOWdrbC1xWTdsRWd0SUtMOC1mS3VzUWNKUQ?oc=5" target="_blank" rel="noopener">Ahold Delhaize Outlines CEO Succession Plan</a>
+          <span class="feed-meta"><span class="feed-src">Progressive Grocer</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-10-01">Oct 1</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPTGxFc0hhemlFZXVRWmo3OWFWd2pBTFdGdlhaMHZ5MFplZWtDdTJUM1k3SHlVc2RIb0pXVVNFTnU1cjlJckJldVNBTnZmaGZjaEVIQjBjcHhxaHNrN1ZFUHRHOHpRek5sdHdRaERCSGJIazVHWXBHNGRfZDA2MFlrM1Vod2s4cDFSbUZGdzYtQkgtS1gwci1IQlh6bVU?oc=5" target="_blank" rel="noopener">Boards Weigh Internal vs. External CEO Candidates in Succession Planning</a>
+          <span class="feed-meta"><span class="feed-src">Hunt Scanlon Media</span><span class="feed-tag">News</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-09-23">Sep 23</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNDg4RUMwSERfSzFMVmltcmQtZjh5Wm5yVFpMYk1PZUZzdXhJeTd2bTdvZ29RdXptdVpWY2ItSWI2ZHh6bjVzWExmaDc3R3B2XzNtdEtGcXVYVFFQQlhWbUE2b18wQzVRZmpTMWtPX1ZYenR3b01TUUpUQk1NQnZ5QnViTVlNOFpiMVdjM1B6MUdpd1hqekt2Y1FLVG10bHdYczJDTUQ2SmdsTHBiOFNuX2hSS1lWalVKcDhvWGd1aTZjUQ?oc=5" target="_blank" rel="noopener">The CEO Decision: How PE Investors Select and Reassess Leaders from Entry to Exit</a>
+          <span class="feed-meta"><span class="feed-src">The Harvard Law School Forum on Corporate Governance</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="ceo">
+          <time datetime="2026-09-19">Sep 19</time>
+          <a class="feed-title" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE9SWi1ndnhmMlN2YXJydzJGUTVIc2FNcHZLUDhKeGxEa1dYU2xscmJMc1Y4cnZfWnN5aHFSaWtYVmVEdngyRmE3bFFVYXVidDFFeEhUWXBERnhvYThsWmxiaE9vVVdQS2pqa1BKVUhlX1hWaFE?oc=5" target="_blank" rel="noopener">Forced CEO Departures</a>
+          <span class="feed-meta"><span class="feed-src">The Harvard Law School Forum on Corporate Governance</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="research">
+          <time datetime="2026-09-18">Sep 18</time>
+          <a class="feed-title" href="https://www.spencerstuart.com/research-and-insight/board-governance-trends" target="_blank" rel="noopener">Board Governance Trends: A Global View</a>
+          <span class="feed-meta"><span class="feed-src">Spencer Stuart</span><span class="feed-tag">Research</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-07-02">Jul 2</time>
+          <a class="feed-title" href="https://blog.exit-planning-institute.org/rhythm-that-closes-the-value-gap" target="_blank" rel="noopener">The Operating Rhythm That Closes the Value Gap</a>
+          <span class="feed-meta"><span class="feed-src">Exit Planning Institute</span><span class="feed-tag">Analysis</span></span>
+        </li>
+        <li class="feed-item" data-cat="exit">
+          <time datetime="2026-06-30">Jun 30</time>
+          <a class="feed-title" href="https://blog.exit-planning-institute.org/walking-to-destiny-podcast" target="_blank" rel="noopener">Introducing the Newest Exit is Now Podcast, Walking to Destiny</a>
+          <span class="feed-meta"><span class="feed-src">Exit Planning Institute</span><span class="feed-tag">Podcast</span></span>
+        </li>
+        <!--FEED:END-->
+    </ol>
+    <p class="feed-empty" id="feedEmpty" role="status">Nothing in this topic right now.</p>
+    <p class="feed-note">Items are headlines from third-party publishers, selected by keyword and linked to the original; they are not endorsements, and their claims are the publishers' own. The <a href="feeds.json">source list</a> is open to additions.</p>
+  </div>
+</section>
+
+<!-- ======================= 03 TWO DOMAINS ======================= -->
 <section id="domains" class="band-dark">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">02</span><span>The two domains of succession</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">03</span><span>The two domains of succession</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">One word. Two disciplines. They must be planned together.</h2>
     <p class="sec-lead reveal">Most plans fail because they solve only half the problem. Internal succession keeps the business running; external succession transfers what it is worth. Neglect either and the other collapses, an owner-dependent company is both leaderless and unsellable.</p>
 
@@ -447,10 +639,10 @@
   </div>
 </section>
 
-<!-- ======================= 03 THE HUMAN DIMENSION ======================= -->
+<!-- ======================= 04 THE HUMAN DIMENSION ======================= -->
 <section id="human">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">03</span><span>The human dimension</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">04</span><span>The human dimension</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">A handoff is a human event before it is a legal one.</h2>
     <p class="sec-lead reveal">Internal succession fails far more often on the people than on the paperwork. An org chart can be redrawn in an afternoon; trust, identity, and family relationships cannot. This is the part most plans underweight, and the part that most often decides whether a transition actually holds.</p>
 
@@ -465,7 +657,7 @@
       <div class="card reveal">
         <div class="kicker"><span>The successor</span><span>Readiness × will</span></div>
         <h3>Capability is not consent</h3>
-        <p>A successor needs two things, and families routinely assume the second. Capability can be developed and benchmarked; willingness cannot be conscripted. The child who is able may not want it; the one who wants it may not be ready. Test for genuine desire as rigorously as for competence, hand over real authority before the title, and let the successor earn legitimacy with the team rather than inherit it.</p>
+        <p>A successor needs two things, and families routinely assume the second. Capability can be developed and benchmarked; willingness cannot be conscripted. The child who is able may not want it; the one who wants it may not be ready. Test for genuine desire as rigorously as for competence, hand over real authority before the title, and let the successor earn legitimacy with the team rather than inherit it. Deloitte's 2026 survey shows the gap: 61% of family businesses have a family member interested in the CEO role, yet fewer than a quarter (23%) believe that person is ready in the near term.</p>
         <div class="pills"><span class="pill">Willingness</span><span class="pill">Legitimacy</span><span class="pill">Earned authority</span></div>
       </div>
 
@@ -490,10 +682,10 @@
   </div>
 </section>
 
-<!-- ======================= 04 FRAMEWORKS ======================= -->
+<!-- ======================= 05 FRAMEWORKS ======================= -->
 <section id="frameworks">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">04</span><span>Frameworks &amp; methodologies</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">05</span><span>Frameworks &amp; methodologies</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The proven models, side by side.</h2>
     <p class="sec-lead reveal">You do not need to invent a process. These are the load-bearing frameworks the field actually uses, each linked to its primary source so you can go deeper.</p>
 
@@ -557,10 +749,10 @@
   </div>
 </section>
 
-<!-- ======================= 05 TRANSFER SPECTRUM ======================= -->
+<!-- ======================= 06 TRANSFER SPECTRUM ======================= -->
 <section id="spectrum" class="band-deep">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">05</span><span>The transfer spectrum</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">06</span><span>The transfer spectrum</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">Eight ways out. The right one fits the family, not the headline.</h2>
     <p class="sec-lead reveal">Almost every owner chooses among these paths. Each trades price against control, tax, speed, and legacy differently. The framing question is not "what is it worth" but "what does this business need to do for the family over the next twenty years."</p>
 
@@ -598,7 +790,7 @@
       <div class="path reveal">
         <div class="ix">PATH 06</div>
         <h4>Private equity recapitalization <span class="typetag ext">External</span></h4>
-        <p><b>Best when</b> you want partial liquidity now and a "second bite" later. Take chips off the table, keep equity and a growth partner; record dry powder is chasing these deals.</p>
+        <p><b>Best when</b> you want partial liquidity now and a "second bite" later. Take chips off the table, keep equity and a growth partner; well-capitalized sponsors actively pursue these deals.</p>
       </div>
       <div class="path reveal">
         <div class="ix">PATH 07</div>
@@ -614,10 +806,10 @@
   </div>
 </section>
 
-<!-- ======================= 06 PROTOCOL ======================= -->
+<!-- ======================= 07 PROTOCOL ======================= -->
 <section id="protocol">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">06</span><span>The protocol</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">07</span><span>The protocol</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">A defensible sequence, drawn from the research.</h2>
     <p class="sec-lead reveal">No single body owns "the" succession process, but the credible methodologies converge on the same spine. This is that consensus, ordered for action and timed against best-practice windows.</p>
 
@@ -690,10 +882,10 @@
   </div>
 </section>
 
-<!-- ======================= 07 TOOLS ======================= -->
+<!-- ======================= 08 TOOLS ======================= -->
 <section id="tools" class="band-dark">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">07</span><span>Tools, templates &amp; artifacts</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">08</span><span>Tools, templates &amp; artifacts</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The working documents, and where they come from.</h2>
     <p class="sec-lead reveal">A plan is only as good as its artifacts. These are the instruments that turn a methodology into something a board can actually run.</p>
 
@@ -711,10 +903,10 @@
   </div>
 </section>
 
-<!-- ======================= 08 VOICES ======================= -->
+<!-- ======================= 09 VOICES ======================= -->
 <section id="voices">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">08</span><span>Voices &amp; key influencers</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">09</span><span>Voices &amp; key influencers</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The people and institutions worth reading first.</h2>
     <p class="sec-lead reveal">The field has a canon. These are the authors, researchers, and institutions whose work underpins nearly every credible succession plan in market today.</p>
 
@@ -724,7 +916,7 @@
       <div class="voice reveal"><div class="ini">CF</div><div><h4>Claudio Fernández-Aráoz</h4><div class="role">Egon Zehnder · the economics of "who"</div><p>Author of <span class="work">It's Not the How or the What but the Who</span> and lead author of the HBR study quantifying the trillion-dollar cost of poor succession. The field's most-cited voice on senior hiring and potential.</p></div></div>
       <div class="voice reveal"><div class="ini">CS</div><div><h4>Christopher &amp; Scott Snider</h4><div class="role">Exit Planning Institute · CEPA</div><p>Architects of the <span class="work">Value Acceleration Methodology</span> and <span class="work">Walking to Destiny</span>, and stewards of the CEPA credential and the State of Owner Readiness research that defines the exit-planning profession.</p></div></div>
       <div class="voice reveal"><div class="ini">JW</div><div><h4>John Ward</h4><div class="role">Family Business Consulting Group</div><p>Author of <span class="work">Keeping the Family Business Healthy</span> and source of the original generational survival research, the numbers everyone quotes and few cite correctly.</p></div></div>
-      <div class="voice reveal"><div class="ini">IL</div><div><h4>Ivan Lansberg</h4><div class="role">Family enterprise · generational transition</div><p>Co-author of the Three-Circle thinking on family enterprise and author of <span class="work">Succeeding Generations</span>, the definitive work on how families plan, or fail to plan, the passage of leadership and ownership from one generation to the next.</p></div></div>
+      <div class="voice reveal"><div class="ini">IL</div><div><h4>Ivan Lansberg</h4><div class="role">Family enterprise · generational transition</div><p>Co-author of <span class="work">Generation to Generation</span>, which built out the Three-Circle model, and author of <span class="work">Succeeding Generations</span>, a leading work on how families plan, or fail to plan, the passage of leadership and ownership from one generation to the next.</p></div></div>
       <div class="voice reveal"><div class="ini">MG</div><div><h4>Marshall Goldsmith</h4><div class="role">Executive coaching · the handoff</div><p>The world's best-known executive coach and author of <span class="work">Succession: Are You Ready?</span>, focused on the human side of stepping aside well, the part most plans underweight.</p></div></div>
       <div class="voice reveal"><div class="ini">MK</div><div><h4>McKinsey FOB team</h4><div class="role">Leke, Mukherjee &amp; colleagues</div><p>Authors of <span class="work">Passing the Baton</span>, the 200-company study of value creation through CEO succession at family businesses, and the four-archetype framework.</p></div></div>
       <div class="voice reveal"><div class="ini">IN</div><div><h4>The institutional research</h4><div class="role">Boards, search, and governance</div><p>Egon Zehnder, Russell Reynolds, PwC, Deloitte Private, Gallup, and the Harvard Law School Forum on Corporate Governance, the ongoing data on CEO turnover, board practice, and what separates good transitions from costly ones.</p></div></div>
@@ -732,12 +924,12 @@
   </div>
 </section>
 
-<!-- ======================= 09 WATCH ======================= -->
+<!-- ======================= 10 WATCH ======================= -->
 <section id="watch" class="band-deep">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">09</span><span>Watch &amp; listen</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">10</span><span>Watch &amp; listen</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">Bring the ideas to life.</h2>
-    <p class="sec-lead reveal">A shelf of talks and conversations, weighted toward the human and family side of the handoff. The featured talk sits below; the watchlist gathers voices, from Ivan Lansberg to working advisors, worth an hour of your attention.</p>
+    <p class="sec-lead reveal">A shelf of talks, conversations, and podcasts, weighted toward the human and family side of the handoff. The featured talk sits below; the list gathers voices, from Ivan Lansberg to working advisors, worth an hour of your attention. For what is new this week, see <a href="#feed">the feed</a>.</p>
 
     <div class="video-frame reveal">
       <iframe src="https://www.youtube-nocookie.com/embed/MfuoQaD85uw" title="Family Business Succession: Balancing Legacy, Leadership and Letting Go" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -751,14 +943,16 @@
       <a class="wl reveal" href="https://www.youtube.com/watch?v=8SAcS0TKwyk" target="_blank" rel="noopener"><span class="play">▶</span><span><span class="wt">Trapped Between Generations: Why Successors Feel Stuck</span><span class="ws">Transition Strategists</span></span></a>
       <a class="wl reveal" href="https://www.youtube.com/watch?v=BG-se0wnmys" target="_blank" rel="noopener"><span class="play">▶</span><span><span class="wt">Succession in Family Businesses: Learning to Let Go &amp; Grow</span><span class="ws">Delia Associates</span></span></a>
       <a class="wl reveal" href="https://www.youtube.com/watch?v=_Y910OgY0jA" target="_blank" rel="noopener"><span class="play">▶</span><span><span class="wt">Passing the Baton: A CEO's Guide to Succession &amp; Exit</span><span class="ws">People Puzzles</span></span></a>
+      <a class="wl reveal" href="https://blog.exit-planning-institute.org/walking-to-destiny-podcast" target="_blank" rel="noopener"><span class="play">♪</span><span><span class="wt">Walking to Destiny: the Exit Is Now podcast</span><span class="ws">Podcast · Exit Planning Institute</span></span></a>
+      <a class="wl reveal" href="https://www.familybusinessmagazine.com/podcasts/" target="_blank" rel="noopener"><span class="play">♪</span><span><span class="wt">Family Business Magazine podcast: governance, NextGens, ownership</span><span class="ws">Podcast · Family Business Magazine</span></span></a>
     </div>
   </div>
 </section>
 
-<!-- ======================= 10 LIBRARY ======================= -->
+<!-- ======================= 11 LIBRARY ======================= -->
 <section id="library">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">10</span><span>The library</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">11</span><span>The library</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The cited shelf.</h2>
     <p class="sec-lead reveal">Every claim on this page traces to a source below. Organized by domain so you can read deeply on whichever side of the handoff you need next.</p>
 
@@ -772,6 +966,7 @@
           <li><a href="https://www.egonzehnder.com/what-we-do/ceo-successions/insights/succession-planning-best-practices" target="_blank" rel="noopener">Succession Planning Best Practices</a><span>Egon Zehnder</span></li>
           <li><a href="https://www.russellreynolds.com/en/capabilities/how-do-i-plan-for-succession/ceo-succession/succeeding-with-succession" target="_blank" rel="noopener">Succeeding with Succession</a><span>Russell Reynolds Associates</span></li>
           <li><a href="https://www.gallup.com/workplace/647864/avoid-getting-boxed-conventional-succession-planning-methods.aspx" target="_blank" rel="noopener">Beyond the 9-Box: avoiding bias</a><span>Gallup</span></li>
+          <li><a href="https://www.challengergray.com/blog/ceo-turnover-falls-in-september-women-gains-climb-to-27-9/" target="_blank" rel="noopener">CEO Turnover Report, September 2026</a><span>Challenger, Gray &amp; Christmas · monthly</span></li>
         </ul>
       </div>
       <div class="lib reveal">
@@ -781,7 +976,8 @@
           <li><a href="https://blog.exit-planning-institute.org/what-is-value-acceleration-methodology" target="_blank" rel="noopener">The Value Acceleration Methodology</a><span>EPI · Christopher Snider</span></li>
           <li><a href="https://www.hbs.edu/bigs/silver-tsunami-employee-ownership" target="_blank" rel="noopener">Employee Ownership &amp; the Silver Tsunami</a><span>Harvard BiGS</span></li>
           <li><a href="https://ctacquisitions.com/family-business-exit-strategies/" target="_blank" rel="noopener">Five Paths: family business exit strategies</a><span>Exit-path comparison</span></li>
-          <li><a href="https://www.familybusinessmagazine.com/liquidity-events-and-shareholder-exit-planning-1" target="_blank" rel="noopener">Liquidity Events &amp; Shareholder Exit</a><span>Family Business Magazine</span></li>
+          <li><a href="https://www.familybusinessmagazine.com/ownership/valuation/esops-as-an-exit-strategy-for-family-businesses/" target="_blank" rel="noopener">ESOPs as an Exit Strategy for Family Businesses</a><span>Family Business Magazine · Oct 2026</span></li>
+          <li><a href="https://blog.exit-planning-institute.org/key-owner-readiness-generational-soor" target="_blank" rel="noopener">Generational State of Owner Readiness</a><span>Exit Planning Institute · 2025</span></li>
           <li><a href="https://www.oldnational.com/resources/insights/the-silver-tsunami-is-reshaping-small-business-why-exit-planning-can-t-wait/" target="_blank" rel="noopener">Why Exit Planning Can't Wait</a><span>Old National Bank · 2026</span></li>
         </ul>
       </div>
@@ -793,17 +989,17 @@
           <li><a href="https://fortune.com/2026/05/22/family-business-ceo-succession-mckinsey-research/" target="_blank" rel="noopener">The problem was the outgoing CEO</a><span>Fortune on McKinsey, 2026</span></li>
           <li><a href="https://familybusinessmagazine.com/uncategorized/critical-look-survival-statistics/" target="_blank" rel="noopener">A Critical Look at Survival Statistics</a><span>Family Business Magazine</span></li>
           <li><a href="https://www.thefbcg.com/resource/family-business-survival-understanding-the-statistics/" target="_blank" rel="noopener">Understanding the Survival Statistics</a><span>Family Business Consulting Group</span></li>
-          <li><a href="https://www.businessinitiative.org/statistics/small-businesses/family-owned/" target="_blank" rel="noopener">Family-Owned Business Statistics 2025</a><span>Aggregated research</span></li>
+          <li><a href="https://olin.washu.edu/docs/research/silver-tsunami-ownership-transitions.pdf" target="_blank" rel="noopener">The Silver Tsunami and Ownership Transitions</a><span>WashU Olin · white paper · Jul 2026</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======================= 11 QUESTIONS ======================= -->
+<!-- ======================= 12 QUESTIONS ======================= -->
 <section id="questions" class="band-dark">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="num">11</span><span>Questions you are not asking</span><span class="ln"></span></div>
+    <div class="eyebrow reveal"><span class="num">12</span><span>Questions you are not asking</span><span class="ln"></span></div>
     <h2 class="sec-title reveal">The questions that separate a plan from a wish.</h2>
     <p class="q-intro reveal sec-lead">Most owners ask "what is my business worth." The harder, more useful questions sit underneath that one. Use these to pressure-test where you really are, across every dimension of the handoff.</p>
 
@@ -898,6 +1094,7 @@
         <div>
           <h5>The field</h5>
           <a href="#case">The case</a>
+          <a href="#feed">The feed</a>
           <a href="#domains">Two domains</a>
           <a href="#human">The human dimension</a>
           <a href="#frameworks">Frameworks</a>
@@ -918,10 +1115,10 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© succession.org · Draft</span>
+      <span>© 2026 succession.org · Figures reviewed November 2, 2026</span>
       <span>The discipline of the handoff</span>
     </div>
-    <p class="disclaimer">Draft reference resource for educational purposes. Figures are paraphrased from the cited third-party sources, which retain all rights to their work; follow each link for the original. Nothing here is legal, tax, or financial advice. Succession decisions should be made with qualified professional counsel.</p>
+    <p class="disclaimer">Reference resource for educational purposes. Figures are paraphrased from the cited third-party sources, which retain all rights to their work; follow each link for the original. Feed items are third-party headlines, linked to their publishers and not endorsed. Nothing here is legal, tax, or financial advice. Succession decisions should be made with qualified professional counsel.</p>
   </div>
 </footer>
 
@@ -940,6 +1137,20 @@
     prog.style.width=(sh>0?(st/sh*100):0)+'%';
   }
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // feed topic filter (the list itself is static HTML, so this is progressive enhancement)
+  var chips=document.getElementById('feedChips'),flist=document.getElementById('feedList'),fempty=document.getElementById('feedEmpty');
+  if(chips&&flist){
+    chips.addEventListener('click',function(e){
+      var b=e.target.closest('button[data-filter]');if(!b)return;
+      var f=b.getAttribute('data-filter'),shown=0;
+      chips.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      flist.querySelectorAll('.feed-item').forEach(function(li){
+        var ok=f==='all'||li.getAttribute('data-cat')===f;li.hidden=!ok;if(ok)shown++;
+      });
+      fempty.style.display=shown?'none':'block';
+    });
+  }
 
   // reveal on scroll
   var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;

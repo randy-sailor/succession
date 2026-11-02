@@ -1,0 +1,97 @@
+{
+  "_readme": "Sources for the succession.org feed; scripts/build_feed.py reads this file. Add a source by copying an entry. 'quota' guarantees a source its latest N items (so primary sources are not drowned out by news). 'trusted' skips keyword filtering. 'require' keeps only titles containing at least one term; 'exclude' drops titles containing any term; 'exclude_url' drops links containing any fragment. type 'gnews' builds a Google News RSS search from 'query'.",
+  "max_items": 24,
+  "max_age_days": 45,
+  "quota_max_age_days": 130,
+  "max_per_publisher": 2,
+  "cluster_threshold": 0.5,
+  "global_exclude": [
+    "HBO", "Logan Roy", "Kendall Roy", "Brian Cox", "Succession season", "Succession finale",
+    "obituary", "stock price", "price target", "Weekly Recap", "Announces CEO", "Announces Leadership",
+    "Appoints", "Names New CEO", "Announces Retirement"
+  ],
+  "exclude_publisher": ["Head Topics", "TradingView", "Business Wire", "PR Newswire", "GlobeNewswire", "Newsfile", "Benzinga", "MarketScreener"],
+  "categories": {
+    "exit": "Exit planning",
+    "family": "Family business",
+    "ceo": "CEO & board",
+    "research": "Research & data"
+  },
+  "sources": [
+    {
+      "name": "Exit Planning Institute",
+      "url": "https://blog.exit-planning-institute.org/rss.xml",
+      "category": "exit",
+      "trusted": true,
+      "tag": "Analysis",
+      "quota": 2
+    },
+    {
+      "name": "Family Business Magazine",
+      "url": "https://www.familybusinessmagazine.com/rss.xml",
+      "category": "family",
+      "trusted": true,
+      "tag": "Analysis",
+      "quota": 4,
+      "exclude_url": ["/solutions-hub/", "/memberships/", "/webinars/"]
+    },
+    {
+      "name": "Challenger, Gray & Christmas",
+      "url": "https://www.challengergray.com/feed/",
+      "category": "research",
+      "tag": "Data",
+      "quota": 1,
+      "require": ["CEO"]
+    },
+    {
+      "name": "Spencer Stuart",
+      "url": "https://www.spencerstuart.com/rss",
+      "category": "research",
+      "tag": "Research",
+      "quota": 1,
+      "require": ["succession", "CEO", "transition", "board"]
+    },
+    {
+      "name": "Harvard Law School Forum on Corporate Governance",
+      "type": "gnews",
+      "query": "site:corpgov.law.harvard.edu succession",
+      "category": "ceo",
+      "tag": "Analysis",
+      "quota": 2,
+      "require": ["succession", "successor", "transition", "CEO"],
+      "exclude": ["Compensation", "M&A", "Tax"]
+    },
+    {
+      "name": "Google News",
+      "type": "gnews",
+      "query": "\"family business\" succession",
+      "category": "family",
+      "tag": "News",
+      "require": ["succession", "successor", "next generation", "next-gen", "handoff", "legacy", "transition", "heir", "family enterprise", "family business"]
+    },
+    {
+      "name": "Google News",
+      "type": "gnews",
+      "query": "\"exit planning\" OR \"business succession\" OR \"succession plan\" owner",
+      "category": "exit",
+      "tag": "News",
+      "require": ["exit", "succession", "sell", "sale", "ESOP", "transition", "owner", "retire"]
+    },
+    {
+      "name": "Google News",
+      "type": "gnews",
+      "query": "\"CEO succession\" OR \"succession planning\" board",
+      "category": "ceo",
+      "tag": "News",
+      "require": ["succession", "successor", "CEO"]
+    },
+    {
+      "name": "Google News",
+      "type": "gnews",
+      "query": "ESOP OR \"employee ownership\" succession OR \"business owners\" retire sell",
+      "category": "exit",
+      "tag": "News",
+      "require": ["ESOP", "employee-owned", "employee ownership", "succession", "retire", "sell", "owner"]
+    }
+  ]
+}
